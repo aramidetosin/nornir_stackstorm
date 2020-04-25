@@ -23,34 +23,21 @@ system {
     {% endfor %}
     }
     services {
-        ssh {
-            root-login allow;
-        }
-        web-management {
-            http {
-                interface fxp0.0;
-            }
+        ssh;
+        netconf {
+            ssh;
         }
     }
     syslog {
-        archive size 100k files 3;
         user * {
             any emergency;
         }
         file messages {
-            any critical;
+            any notice;
             authorization info;
         }
         file interactive-commands {
-            interactive-commands error;
-        }
-    }
-    max-configurations-on-flash 5;
-    max-configuration-rollbacks 5;
-    license {
-        autoupdate {
-            url https://ae1.juniper.net/junos/key_retrieval;
+            interactive-commands any;
         }
     }
 }
-

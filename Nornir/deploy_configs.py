@@ -1,3 +1,4 @@
+import sys
 from nornir import InitNornir
 from nornir.plugins.tasks import networking, text
 from nornir.plugins.functions.text import print_result
@@ -16,8 +17,8 @@ def basic_configuration(task, template_name=None):
 
 
 def main():
-    templ_name = input("Enter the template name:")
-    platform = input("What's the target platform? :")
+    templ_name = sys.argv[1]
+    platform = sys.argv[2]
     nr = InitNornir(config_file='config.yaml', dry_run=True)
     matched_devices = nr.filter(platform=platform)
     result = matched_devices.run(task=basic_configuration,

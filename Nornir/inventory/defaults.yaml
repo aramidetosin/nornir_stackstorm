@@ -1,3 +1,5 @@
 ---
+  username: salt
+  password: salt123
   data:
     domain: gorey.city
