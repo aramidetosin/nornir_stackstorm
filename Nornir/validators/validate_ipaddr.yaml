@@ -1,0 +1,6 @@
+---
+- get_interfaces_ip:
+  fxp0.0:
+    ipv4:
+      10.1.1.1:
+        prefix_length: 24

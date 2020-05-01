@@ -1,12 +1,11 @@
 ---
 core:
-  num_workers: 100
+  num_workers: 1
 
 inventory:
   plugin: nornir.plugins.inventory.netbox.NBInventory
   options:
-    nb_url: "https://192.168.7.172"
+    nb_url: "https://172.20.10.5"
     nb_token: "66ce8c3ca355c1c4b262da2e44d16753521e7fb8"
     ssl_verify: False
-  transform_function: "helpers.adapt_user_password"
-    
+  transform_function: "lib.adapt.user_password"

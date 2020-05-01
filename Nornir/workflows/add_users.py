@@ -1,3 +1,4 @@
+
 # Steps
 # Check that the username is not already configured on the device.
 # Push the config with username and
@@ -29,7 +30,8 @@ def add_new_user(task):
 
 
 def check_users_not_configured(task,):
-    task.run(task=networking.napalm_validate, src="../validators/validate_users.yaml")
+    task.run(task=networking.napalm_validate,
+             src="../validators/validate_users.yaml")
 
 
 def main():
