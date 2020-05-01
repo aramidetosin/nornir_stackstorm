@@ -24,9 +24,9 @@ def get_template(task, template):
     r = task.run(
         task=gitlab,
         action="get",
-        url="http://gitlab.mss.com",
-        token="yfP7ecnFpzRXDUsxzyg4",
-        repository="Nornir_Templates",
+        url="http://gitlab.aramidetosin_nornir.com",
+        token="xnJ4S8UBVsQC6zJGVNRR",
+        repository="template",
         ref="master",
         filename=template,
         # filename=f"{task.host.platform}/{template}",
