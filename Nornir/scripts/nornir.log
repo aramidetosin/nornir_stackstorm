@@ -2,3 +2,87 @@
 2020-04-30 23:52:55,993 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show interface terse']} on 2 hosts
 2020-05-01 00:00:52,275 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show interface terse']} on 2 hosts
 2020-05-01 00:00:52,918 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip interface brief']} on 1 hosts
+2020-05-01 00:13:30,180 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': 'validate_ipaddr.yaml'} on 2 hosts
+2020-05-01 00:13:30,755 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/.local/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/.local/lib/python3.6/site-packages/napalm/base/validate.py", line 200, in compliance_report
+    key = expected_results.pop("_name", "") or getter
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+2020-05-01 00:13:30,755 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/.local/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/.local/lib/python3.6/site-packages/napalm/base/validate.py", line 200, in compliance_report
+    key = expected_results.pop("_name", "") or getter
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+2020-05-01 00:18:09,816 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2020-05-01 00:18:11,822 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:18:26,243 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2020-05-01 00:18:27,768 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:19:27,428 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2020-05-01 00:19:29,129 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:19:36,433 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:20:01,656 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2020-05-01 00:20:03,217 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:20:10,518 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:20:52,863 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2020-05-01 00:20:54,679 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:21:01,989 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2020-05-01 00:21:30,319 - nornir.core.task -    ERROR -      start() - Host 'r4': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/home/gns3/.local/lib/python3.6/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 550, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "/home/gns3/.local/lib/python3.6/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 61, in napalm_get
+    result[g] = method(**options)
+  File "/home/gns3/.local/lib/python3.6/site-packages/napalm/iosxr/iosxr.py", line 163, in get_facts
+    facts_rpc_reply = ETREE.fromstring(self.device.make_rpc_call(facts_rpc_request))
+  File "/home/gns3/.local/lib/python3.6/site-packages/pyIOSXR/iosxr.py", line 151, in make_rpc_call
+    result = self._execute_rpc(rpc_command)
+  File "/home/gns3/.local/lib/python3.6/site-packages/pyIOSXR/iosxr.py", line 365, in _execute_rpc
+    response = self._send_command(xml_rpc_command, delay_factor=delay_factor)
+  File "/home/gns3/.local/lib/python3.6/site-packages/pyIOSXR/iosxr.py", line 275, in _send_command
+    max_loops=max_loops)
+  File "/home/gns3/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1470, in send_command_expect
+    return self.send_command(*args, **kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/netmiko/utilities.py", line 347, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 1389, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "/home/gns3/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 627, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 561, in _read_channel_expect
+    "Timed-out reading channel, data not available."
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-05-01 00:22:13,525 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2020-05-01 00:22:15,767 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts

@@ -5,7 +5,7 @@ from nornir.plugins.tasks import networking, text
 
 
 def main():
-    nr = InitNornir(config_file="config.yaml")
+    nr = InitNornir(config_file="../config.yaml")
     devices = nr.filter(F(platform="junos"))
     # import ipdb
 
