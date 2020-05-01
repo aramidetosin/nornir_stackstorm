@@ -1,0 +1,4 @@
+2020-04-30 23:48:14,370 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show interface terse']} on 2 hosts
+2020-04-30 23:52:55,993 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show interface terse']} on 2 hosts
+2020-05-01 00:00:52,275 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show interface terse']} on 2 hosts
+2020-05-01 00:00:52,918 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['show ip interface brief']} on 1 hosts

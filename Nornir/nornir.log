@@ -2667,3 +2667,4 @@ AttributeError: 'NoneType' object has no attribute 'strip'
 2020-04-25 14:20:06,501 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['users']} on 1 hosts
 2020-04-25 14:33:26,285 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['interfaces_ip']} on 2 hosts
 2020-04-25 14:33:26,973 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['interfaces_ip']} on 1 hosts
+2020-04-30 23:28:16,140 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {'template_name': 'ntp.j2'} on 2 hosts
