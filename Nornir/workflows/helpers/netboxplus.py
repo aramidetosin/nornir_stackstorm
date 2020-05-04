@@ -6,6 +6,7 @@ from nornir.core.deserializer.inventory import Inventory, HostsDict
 
 
 import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 
 class NBExInventory(Inventory):
@@ -124,6 +125,7 @@ class NBExInventory(Inventory):
             devices = False
             interfaces_ip = False
 
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         session = requests.Session()
         session.headers.update({"Authorization": f"Token {nb_token}"})
         session.verify = ssl_verify
