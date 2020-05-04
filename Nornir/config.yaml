@@ -3,9 +3,9 @@ core:
   num_workers: 1
 
 inventory:
-  plugin: nornir.plugins.inventory.netbox.NBInventory
+  plugin: helpers.netboxplus.NBExInventory
   options:
     nb_url: "https://172.20.10.5"
     nb_token: "66ce8c3ca355c1c4b262da2e44d16753521e7fb8"
     ssl_verify: False
-  transform_function: "lib.adapt.user_password"
+  transform_function: "helpers.adapt.more_data"

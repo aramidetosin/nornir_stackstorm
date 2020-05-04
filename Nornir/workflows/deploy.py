@@ -24,14 +24,14 @@ def get_template(task, template):
     r = task.run(
         task=gitlab,
         action="get",
-        url="http://gitlab.aramidetosin_nornir.com",
-        token="xnJ4S8UBVsQC6zJGVNRR",
-        repository="template",
+        url="http://gitlab.mss.com",
+        token="yfP7ecnFpzRXDUsxzyg4",
+        repository="Nornir_Templates",
         ref="master",
         filename=template,
         # filename=f"{task.host.platform}/{template}",
         destination="/tmp/hosts",
-        severity_level=logging.DEBUG
+        severity_level=logging.DEBUG,
     )
     print_result(r)
 
@@ -43,18 +43,19 @@ def push_config(task, template):
         name="Generate config from template",
         template="hosts",
         path="/tmp",
-        severity_level=logging.DEBUG
+        severity_level=logging.DEBUG,
     )
     task.host["config"] = result.result
 
     # Deploy that configuration to the device using NAPALM
-    task.run(task=networking.napalm_configure,
-             name="Loading Configuration on the device",
-             replace=False,
-             dry_run=True,
-             configuration=task.host["config"],
-             severity_level=logging.DEBUG
-             )
+    task.run(
+        task=networking.napalm_configure,
+        name="Loading Configuration on the device",
+        replace=False,
+        dry_run=True,
+        configuration=task.host["config"],
+        severity_level=logging.DEBUG,
+    )
 
 
 main()

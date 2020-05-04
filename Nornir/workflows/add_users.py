@@ -1,4 +1,3 @@
-
 # Steps
 # Check that the username is not already configured on the device.
 # Push the config with username and
