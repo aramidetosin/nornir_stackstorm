@@ -8,7 +8,7 @@ def basic_configuration(task, template_name=None):
     r = task.run(task=text.template_file,
                  name="Base Configuration",
                  template=template_name,
-                 path=f"templates/{task.host.platform}")
+                 path=f"../templates/{task.host.platform}")
 
     task.host["config"] = r.result
 
@@ -19,7 +19,7 @@ def basic_configuration(task, template_name=None):
 def main():
     templ_name = sys.argv[1]
     platform = sys.argv[2]
-    nr = InitNornir(config_file='config.yaml', dry_run=True)
+    nr = InitNornir(config_file='../config.yaml', dry_run=True)
     matched_devices = nr.filter(platform=platform)
     result = matched_devices.run(task=basic_configuration,
                                  template_name=templ_name)
