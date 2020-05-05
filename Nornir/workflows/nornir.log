@@ -175,3 +175,121 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: <function template_file at 0x7f76a29ac950> (failed)
 
 
+2020-05-05 13:17:06,974 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {'template_name': 'ntp.j2'} on 2 hosts
+2020-05-05 13:17:06,991 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'Base Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "../templates/junos/ntp.j2", line 5, in top-level template code
+    {% for server in host.ntp_servers %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ntp_servers'
+
+2020-05-05 13:17:06,992 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "deploy_configs.py", line 11, in basic_configuration
+    path=f"../templates/{task.host.platform}")
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function template_file at 0x7f4ac5323950> (failed)
+
+
+2020-05-05 13:17:06,994 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'Base Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "../templates/junos/ntp.j2", line 5, in top-level template code
+    {% for server in host.ntp_servers %}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ntp_servers'
+
+2020-05-05 13:17:06,994 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "deploy_configs.py", line 11, in basic_configuration
+    path=f"../templates/{task.host.platform}")
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function template_file at 0x7f4ac5323950> (failed)
+
+
+2020-05-05 13:18:41,005 -  nornir.core -     INFO -        run() - Running task 'basic_configuration' with args {'template_name': 'interfaces.j2'} on 2 hosts
+2020-05-05 13:18:41,014 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'Base Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "../templates/junos/interfaces.j2", line 3, in top-level template code
+    {% for intf, unit_dict in interface_dict.items() %}
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'items'
+
+2020-05-05 13:18:41,015 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "deploy_configs.py", line 11, in basic_configuration
+    path=f"../templates/{task.host.platform}")
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function template_file at 0x7f92a12e9950> (failed)
+
+
+2020-05-05 13:18:41,020 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'Base Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/gns3/.local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "../templates/junos/interfaces.j2", line 3, in top-level template code
+    {% for intf, unit_dict in interface_dict.items() %}
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'items'
+
+2020-05-05 13:18:41,020 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'basic_configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "deploy_configs.py", line 11, in basic_configuration
+    path=f"../templates/{task.host.platform}")
+  File "/home/gns3/.local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function template_file at 0x7f92a12e9950> (failed)
+
+
